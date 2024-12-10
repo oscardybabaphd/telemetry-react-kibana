@@ -1,0 +1,35 @@
+{
+  "name": "telemetry-react-kibana",
+  "version": "1.0.6",
+  "description": "instrument react app  with kibana",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup src/index.ts --format esm,cjs --dts"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
+  "author": "Oscar Itaba",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/history": "^5.0.0",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "@types/react-router-dom": "^5.3.3",
+    "cpx": "^1.5.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@remix-run/router": "^1.21.0",
+    "history": "^5.3.0",
+    "peer": "^1.0.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.0.2"
+  }
+}
