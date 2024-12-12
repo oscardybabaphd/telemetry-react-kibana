@@ -1,13 +1,24 @@
 {
   "name": "telemetry-react-kibana",
-  "version": "1.0.6",
-  "description": "instrument react app  with kibana",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "version": "1.0.11",
+  "description": "instrument react app",
+  "main": "dist/react/index.js",
+  "module": "dist/react/index.mjs",
+  "types": "dist/react/index.d.ts",
+  "exports": {
+    "./react": {
+      "import": "./dist/react/index.mjs",
+      "require": "./dist/react/index.js"
+    },
+    "./next": {
+      "import": "./dist/next/index.mjs",
+      "require": "./dist/next/index.js"
+    }
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup src/index.ts --format esm,cjs --dts"
+    "build:react": "tsup src/react/index.ts --format esm,cjs --dts --out-dir dist/react",
+    "build:next": "tsup src/next/index.ts --format esm,cjs --dts --out-dir dist/next",
+    "build": "npm run build:react && npm run build:next"
   },
   "files": [
     "dist"
